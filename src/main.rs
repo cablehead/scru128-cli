@@ -1,5 +1,5 @@
-use std::str::FromStr;
 use std::io::Read;
+use std::str::FromStr;
 
 use clap::{Parser, Subcommand};
 
@@ -12,8 +12,9 @@ struct Args {
 
 #[derive(Subcommand, Debug)]
 enum Commands {
+    Generate {},
     Parse {
-        #[clap(long, value_parser)]
+        #[clap(value_parser)]
         id: Option<String>,
     },
 }
@@ -21,21 +22,25 @@ enum Commands {
 fn main() {
     let args = Args::parse();
 
-    match args.command {
-        Some(Commands::Parse { id }) => {
-            println!("id: {:?}", id);
-        }
-        None => {
+    let command = args.command.unwrap_or(Commands::Generate {});
+
+    match command {
+        Commands::Generate {} => {
             let id = scru128::new();
             println!("{}", id);
         }
+
+        Commands::Parse { id } => {
+            let id = match id {
+                Some(id) => id,
+                None => {
+                    let mut buf = String::new();
+                    std::io::stdin().read_to_string(&mut buf).unwrap();
+                    buf
+                }
+            };
+            let id = scru128::Scru128Id::from_str(&id).unwrap();
+            println!("{}", (id.timestamp() as f64) / 1000.0);
+        }
     }
-
-
-    /*
-    let mut buf = String::new();
-    std::io::stdin().read_to_string(&mut buf).unwrap();
-    let id = scru128::Scru128Id::from_str(&buf).unwrap();
-    println!("{}", (id.timestamp() as f64)/ 1000.0);
-    */
 }
