@@ -12,7 +12,10 @@ struct Args {
 
 #[derive(Subcommand, Debug)]
 enum Commands {
+    /// Generate a scrui128 ID (default)
     Generate {},
+
+    /// Parse a scrui128 ID to a UNIX timestamp
     Parse {
         #[clap(value_parser)]
         id: Option<String>,
