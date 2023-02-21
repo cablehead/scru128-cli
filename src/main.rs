@@ -39,7 +39,7 @@ fn main() {
                 None => {
                     let mut buf = String::new();
                     std::io::stdin().read_to_string(&mut buf).unwrap();
-                    buf
+                    buf.trim().to_string()
                 }
             };
             let id = scru128::Scru128Id::from_str(&id).unwrap();
