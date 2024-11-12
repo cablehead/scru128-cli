@@ -1,7 +1,16 @@
 [package]
-name = "scru128"
+name = "scru128-cli"
 version = "0.2.0"
 edition = "2021"
+description = "CLI frontend for the scru128 crate, a library for generating and parsing SCRU128 identifiers"
+license = "Apache-2.0"
+repository = "https://github.com/cablehead/scru128-cli"
+documentation = "https://docs.rs/scru128-cli"
+homepage = "https://github.com/cablehead/scru128-cli"
+readme = "README.md"
+keywords = ["scru128", "CLI", "uuid", "identifier", "timestamp"]
+categories = ["command-line-utilities"]
+authors = ["AndyG <andy@thecablelounge.com>"]
 
 [dependencies]
 clap = { version = "4.5.20", features = ["derive"] }
