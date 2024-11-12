@@ -16,6 +16,12 @@ printf 0390WDHD7NYLH9EFT2DPNVMD4 | scru128 parse
 1677003390.222
 ```
 
+## Install
+
+```bash
+cargo install scru128-cli
+```
+
 ## Pairs well with
 
 - https://github.com/qtfkwk/dtg
