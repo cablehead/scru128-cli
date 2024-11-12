@@ -1,6 +1,6 @@
 [package]
 name = "scru128-cli"
-version = "0.2.0"
+version = "0.3.0"
 edition = "2021"
 description = "CLI frontend for the scru128 crate, a library for generating and parsing SCRU128 identifiers"
 license = "Apache-2.0"
@@ -15,3 +15,7 @@ authors = ["AndyG <andy@thecablelounge.com>"]
 [dependencies]
 clap = { version = "4.5.20", features = ["derive"] }
 scru128 = "3.1.0"
+
+[[bin]]
+name = "scru128"
+path = "src/main.rs"
