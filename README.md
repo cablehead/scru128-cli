@@ -19,8 +19,13 @@ printf 0390WDHD7NYLH9EFT2DPNVMD4 | scru128 parse
 ## Install
 
 ```bash
+eget cablehead/scru128-cli   # binary name is scru128
 cargo install scru128-cli
 ```
+
+Prebuilt binaries (macos-arm64, linux-arm64, linux-amd64) are on the
+[releases page](https://github.com/cablehead/scru128-cli/releases), built by the
+shared [cablehead/pipelines](https://github.com/cablehead/pipelines) workflow.
 
 ## Pairs well with
 
