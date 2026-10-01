@@ -1,6 +1,6 @@
 [package]
 name = "scru128-cli"
-version = "0.3.0"
+version = "0.3.1"
 edition = "2021"
 description = "CLI frontend for the scru128 crate, a library for generating and parsing SCRU128 identifiers"
 license = "Apache-2.0"
